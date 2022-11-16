@@ -1,0 +1,24 @@
+{
+  "name": "roll-da-dice",
+  "version": "1.0.0",
+  "description": "Server with endpoints for dice rolling",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js --port=5555"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-fall/a04-ethanwk-unc.git"
+  },
+  "author": "ethanwk-unc",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-fall/a04-ethanwk-unc/issues"
+  },
+  "type": "module",
+  "homepage": "https://github.com/comp426-2022-fall/a04-ethanwk-unc#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "minimist": "^1.2.7"
+  }
+}
