@@ -19,7 +19,7 @@ app.get('/app', function (req, res) {
 })
 
 // app/roll endpoint
-app.route("/app/roll")
+app.route("/app/roll/")
 .get((req,res) => {
     res.json(roll(6,2,1))
 })
@@ -31,6 +31,25 @@ app.route("/app/roll")
     res.json(roll(sides,dice,rolls))
 });
 
+//dumb dumb stupid hard code for each extra piece
+app.get('/app/roll/:sides', (req,res) => {
+    const sides =  parseInt(req.params.sides)
+    res.json(roll(sides, 2,1))
+  })
+  
+app.get('/app/roll/:sides/:dice', (req,res) => {
+    const sides = parseInt(req.params.sides)
+    const dice = parseInt(req.params.dice)
+    res.json(roll(sides, dice, 1))
+})
+  
+app.get('/app/roll/:sides/:dice/:rolls', (req,res) => {
+    const sides = parseInt(req.params.sides)
+    const dice = parseInt(req.params.dice)
+    const rolls = parseInt(req.params.rolls)
+    res.json(roll(sides, dice, rolls))
+})
+  
 //Non-endpoint
 app.get('*', function (req, res) {
     res.status(404).send("404 NOT FOUND")
