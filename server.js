@@ -14,9 +14,15 @@ app.get('/app', function (req, res) {
     res.status(200).send("200 OK")
 })
 
+//default roll
+app.get('/app/roll', function (req, res) {
+    res.json(roll(6,2,1))
+})
+
 //Non-endpoint
 app.get('*', function (req, res) {
     res.status(404).send("404 NOT FOUND")
 })
+
 
 app.listen(port)
